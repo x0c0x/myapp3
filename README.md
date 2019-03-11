@@ -24,6 +24,9 @@ Plugins Jenkins requires:
 - Pipeline: GitHub Groovy Libraries
 - SonarQube Scanner for Jenkins
 
+How install plugins:
+- Open URL http://ip_server_jenkins:8080/pluginManager/available
+
 _____________________________________________________________________________________
 
 
