@@ -1,18 +1,16 @@
 package com.azagramac.app;
 
-/**
- * Hello world!
- */
-public class App
-{
-    private final String message = "Hello World!";
-    public App() {}
+import java.security.SecureRandom;
 
-    public static void main(String[] args) {
-        System.out.println(new App().getMessage());
-    }
+public class RandomString {
+	private static final String ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
+	private static final SecureRandom RANDOM = new SecureRandom();
 
-    private final String getMessage() {
-        return message;
-    }
+	public static String generate(int count) {
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0; i < count; ++i) {
+			sb.append(ALPHABET.charAt(RANDOM.nextInt(ALPHABET.length())));
+		}
+		return sb.toString();
+	}
 }
