@@ -1,8 +1,19 @@
 package com.azagramac.app;
 
-public class App {
+/**
+ * Hello world!
+ */
+
+public class App
+{
+    private final String message = "Hello World!";
+    public App() {}
+
     public static void main(String[] args) {
-        // Prints "Hello, World" to the terminal window.
-        System.out.println("Hello, World");
+        System.out.println(new App().getMessage());
+    }
+
+    private final String getMessage() {
+        return message;
     }
 }
