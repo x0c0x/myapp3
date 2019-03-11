@@ -2,7 +2,7 @@ package com.azagramac.app;
 
 import java.security.SecureRandom;
 
-public class RandomString {
+public class App {
 	private static final String ALPHABET = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_";
 	private static final SecureRandom RANDOM = new SecureRandom();
 
