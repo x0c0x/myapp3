@@ -1,3 +1,5 @@
+![GitHub top language](https://img.shields.io/github/languages/top/azagramac/sample-java-maven-jenkins-nexus-sonar.svg) ![GitHub last commit (branch)](https://img.shields.io/github/last-commit/azagramac/sample-java-maven-jenkins-nexus-sonar/master.svg)
+
 # sample-java-maven-jenkins-nexus-sonar
 
 This repository is for the
