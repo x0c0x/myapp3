@@ -27,6 +27,9 @@ Plugins Jenkins requires:
 How install plugins:
 - Open URL http://ip_server_jenkins:8080/pluginManager/available
 
+Sample on Jenkins:
+![alt text](http://url/to/img.png)
+
 _____________________________________________________________________________________
 
 
