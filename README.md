@@ -28,7 +28,7 @@ How install plugins:
 - Open URL http://ip_server_jenkins:8080/pluginManager/available
 
 Sample on Jenkins:
-![alt text](https://github.com/AzagraMac/sample-java-maven-jenkins-nexus-sonar/blob/master/img_sample.png)
+![alt text](https://github.com/AzagraMac/sample-java-maven-jenkins-nexus-sonar/blob/master/src/img_sample.png)
 
 _____________________________________________________________________________________
 
