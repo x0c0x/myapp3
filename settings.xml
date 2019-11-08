@@ -21,7 +21,7 @@
     <mirror>
       <id>repo</id>
       <name>repo</name>
-      <url>http://10.22.21.137:8081/repository/repo/</url>
+      <url>http://10.22.21.138:8081/repository/repo/</url>
       <mirrorOf>*</mirrorOf>
     </mirror>
   </mirrors>
