@@ -14,12 +14,12 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "10.22.21.138:8081"
+        NEXUS_URL = "192.168.1.100:8081"
         // Repository where we will upload the artifact
         NEXUS_REPOSITORY_RELEASES = "maven-releases"
         NEXUS_REPOSITORY_SNAPSHOTS = "maven-snapshots"
         // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "899bfb86-db46-3333-939e-464185476a57"
+        NEXUS_CREDENTIAL_ID = "nexuspw"
     }
     
     stages {
@@ -41,8 +41,11 @@ pipeline {
         
         stage('SonarQube Analytics') {
             steps {
-                withSonarQubeEnv('sonar-server') {
-                    sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
+                 def mvnHome =  tool name: 'apache-maven-3.6.1', type: 'maven'
+                 withSonarQubeEnv('sonar7') { 
+                 sh "${mvnHome}/bin/mvn sonar:sonar"
+        //        withSonarQubeEnv('sonar-server') {
+          //          sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
                 }
             }
         }
@@ -80,6 +83,28 @@ pipeline {
                     }
                 }
             }
+            
+            
+        stage('Slack Notification'){
+             steps{
+                script{
+                //slackSend channel: '#jenkins-build', color: 'Good', message: 'Welcome to Jenkins', teamDomain: 'x0c0x', tokenCredentialId: 'slacknotification'
+               // slackSend color: 'good', message: 'Build is successfully completed', channel: '#jenkins-build'
+              //  slackSend (color: 'good', channel: '#jenkins-build', message: "Completed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
+    
+ //   def currentBuild = 'Pass'
+    def message = """
+        *Jenkins Build*
+        Job name: `${env.JOB_NAME}`
+        Build number: `#${env.BUILD_NUMBER}`
+        Build status: `${currentBuild.result}`
+        Build details: <${env.BUILD_URL}/console|See in web console>
+    """.stripIndent()
+
+    slackSend(color: 'good', message: message)
+			            }
+			        }
+		     }                 
         }
     }
 }
