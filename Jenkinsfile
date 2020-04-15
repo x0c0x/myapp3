@@ -1,5 +1,3 @@
-#!/usr/bin/groovy
-
 pipeline {
     agent {
         docker {
@@ -41,9 +39,10 @@ pipeline {
         
         stage('SonarQube Analytics') {
             steps {
-                 def mvnHome =  tool name: 'apache-maven-3.6.1', type: 'maven'
+   //              mvnHome =  tool name: 'apache-maven-3.6.1', type: 'maven'
                  withSonarQubeEnv('sonar7') { 
-                 sh "${mvnHome}/bin/mvn sonar:sonar"
+   //              sh "${mvnHome}/bin/mvn sonar:sonar"
+                sh "mvn sonar:sonar"
         //        withSonarQubeEnv('sonar-server') {
           //          sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.2:sonar'
                 }
@@ -83,6 +82,7 @@ pipeline {
                     }
                 }
             }
+        }
             
             
         stage('Slack Notification'){
@@ -93,7 +93,7 @@ pipeline {
               //  slackSend (color: 'good', channel: '#jenkins-build', message: "Completed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     
  //   def currentBuild = 'Pass'
-    def message = """
+        message = """
         *Jenkins Build*
         Job name: `${env.JOB_NAME}`
         Build number: `#${env.BUILD_NUMBER}`
@@ -107,4 +107,3 @@ pipeline {
 		     }                 
         }
     }
-}
