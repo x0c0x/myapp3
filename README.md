@@ -32,7 +32,7 @@ How install plugins:
 Sample on Jenkins:
 ![alt text](https://github.com/AzagraMac/sample-java-maven-jenkins-nexus-sonar/blob/master/src/img_sample.png)
 
-_____________________________________________________________________________________
+_________________________________________________________________________
 
 
 
