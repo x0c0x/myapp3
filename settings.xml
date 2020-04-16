@@ -16,7 +16,7 @@
       <password>admin123</password>
     </server>
   </servers>
-// unuse code as below. Will remove next release
+// unuse code as below. Will remove next release //
   <mirrors>
     <mirror>
       <id>repo</id>
