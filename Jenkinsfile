@@ -94,7 +94,7 @@ pipeline {
                // slackSend color: 'good', message: 'Build is successfully completed', channel: '#jenkins-build'
               //  slackSend (color: 'good', channel: '#jenkins-build', message: "Completed: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]' (${env.BUILD_URL})")
     
-	currentBuild = 'Pass'
+	currentBuild.result = 'SUCCESS'
         message = """
         *Jenkins Build*
         Job name: `${env.JOB_NAME}`
