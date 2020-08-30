@@ -50,7 +50,7 @@ pipeline {
         }
 
 // Build repo        
-
+/* Temporary disable nexus upload - 30 Aug
         stage('Nexus Repository') {
             steps {
                 script {
@@ -86,7 +86,7 @@ pipeline {
             }
         }
             
-            
+*/
         stage('Slack Notification'){
              steps{
                 script{
