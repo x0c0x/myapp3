@@ -49,7 +49,7 @@ pipeline {
             }
         }
 
-// Build repo ..        
+// upload source code to nexus repo      
 /* Temporary disable nexus upload - 30 Aug
         stage('Nexus Repository') {
             steps {
